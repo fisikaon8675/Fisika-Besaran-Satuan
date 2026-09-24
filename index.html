@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Besaran dan Satuan - Fisika Antigravitasi</title>
+    <!-- Memuat Phaser 3 melalui CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Phaser Canvas akan dimuat di sini -->
+
+        <!-- UI Energi (HTML UI di atas Canvas lebih mudah di-styling dengan CSS) -->
+        <div id="ui-layer">
+            <div class="energy-bar-container">
+                <span>Energi:</span>
+                <div class="energy-bar-bg">
+                    <div id="energy-bar-fill"></div>
+                </div>
+            </div>
+
+            <!-- Tombol Pause -->
+            <button id="btn-pause" class="btn" style="position: absolute; top: 0; right: 0;">|| Pause</button>
+        </div>
+
+        <!-- Modal Soal Fisika -->
+        <div id="quiz-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 class="modal-title">Permata Pengetahuan Fisika</h2>
+                <p id="quiz-question" class="quiz-question">Pertanyaan akan muncul di sini</p>
+                <div id="quiz-options" class="quiz-options">
+                    <!-- Tombol pilihan ganda akan di-generate oleh JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Game Over / Win -->
+        <div id="end-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="end-title" class="modal-title">Game Over!</h2>
+                <p id="end-message">Energi kamu habis.</p>
+                <button id="restart-btn" class="btn">Main Lagi</button>
+            </div>
+        </div>
+
+        <!-- Layar Start Awal -->
+        <div id="start-screen" class="modal">
+            <div class="modal-content" style="max-width: 600px;">
+                <h2 class="modal-title">Petualangan Besaran & Satuan</h2>
+                <p class="quiz-question" style="font-size: 16px; margin-bottom: 20px;">
+                    <strong>Cara Bermain:</strong><br><br>
+                    Kamu terdampar di luar angkasa tanpa gravitasi! <br>
+                    Gunakan <strong>W, A, S, D</strong> atau <strong>Panah</strong> untuk menyalakan *thruster*
+                    pesawatmu.<br>
+                    - Jangan menabrak monster luar angkasa, energimu akan berkurang.<br>
+                    - Kumpulkan <strong>Permata </strong> dan jawab pertanyaannya dengan benar untuk memulihkan energi
+                    dan membuka portal akhir.<br>
+                    - Temukan Pintu Portal Hijau di ujung lorong setelah melengkapi misimu.
+                </p>
+                <button id="btn-start" class="btn" style="width: 100%; font-size: 20px; padding: 15px;">Mulai
+                    Petualangan!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memuat logika game -->
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
